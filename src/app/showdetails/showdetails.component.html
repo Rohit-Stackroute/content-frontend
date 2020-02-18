@@ -1,0 +1,51 @@
+<mat-card class="example-card" fxFlexOffset="30%" >
+  <h3 style="text-align:center;">USER DETAILS </h3> 
+<form  [formGroup]="userdetailsForm">
+  <div class = "container">
+    <div> 
+      <mat-form-field  fxFlex="100%" appearance="outline">
+        <mat-label>Content Id</mat-label>
+        <input matInput placeholder="Content" formControlName="contentId">
+      </mat-form-field>
+    </div>
+    <div>
+      <mat-form-field   fxFlex="100%" appearance="outline" >
+        <mat-label>Logged In User Name</mat-label>
+        <input matInput placeholder="Logged In User Name" formControlName="userName">
+      </mat-form-field>
+    </div>
+  </div>
+<div [hidden]="!show">
+    <pre>
+    Unique User Count: {{this.userdetails?.unique_user_count}}
+    Batch Code: {{this.batchCode}} 
+    Viewed By:{{this.slicedArray}} </pre>
+  </div>
+    <div *ngFor="let avatar of  this.slicedUserUrl[0];let i = index;">
+      <img   style="width:24px"  src={{this.slicedUserUrl[0][i]}}/>
+    </div>
+    <p *ngIf ="this.j>=2;">and {{this.j-2 }} others</p>
+      <div *ngIf = "this.showUser!=this.userdetailsForm.value.userName">
+      </div>
+    <div class="item"  fxLayout="row" fxLayoutAlign="space-around start" fxLayoutGap="80px">
+   
+      <button mat-raised-button fxFlex color="primary" (click)="getUserDetails()" [disabled]="isclicked">Show Details</button>
+      <button mat-raised-button fxFlex color="primary" (click)="reset()">Log Out</button>
+   
+    </div>
+  </form>
+</mat-card>
+
+
+
+
+
+
+
+
+
+
+
+
+
+

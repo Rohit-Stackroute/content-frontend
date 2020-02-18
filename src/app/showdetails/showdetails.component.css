@@ -1,0 +1,27 @@
+.example-card {
+  width: 30%;
+ 
+    margin-top: 65px;
+  }
+.container{
+    padding-top: 30px;
+    }
+
+    img {
+        border-radius: 50%; 
+        float:left; 
+
+      }
+ 
+    .item{
+    display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+    }
+    .details{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    }
